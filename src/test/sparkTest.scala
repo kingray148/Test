@@ -19,9 +19,9 @@ object sparkTest {
     val df = spark.read.schema(schema).options(Map("delimiter"->" ")).csv("E:\\笔记本备份\\F盘\\Wang Lei\\Learning\\Spark\\Test\\score.txt")
 //    df.createOrReplaceTempView("temp")
 //    spark.sql("select classNo, gender, avg(score) from temp group by classNo, gender").show()
-    df.selectExpr("name", "classNo as no").show(30)
+//    df.selectExpr("name", "classNo as no").show(30)
 //    val list = df.collectAsList()
-//    df.groupBy("classNo", "gender").avg("score").where("classNo = 12 and gender = '男'").selectExpr("avg(score) as avg").show()
+    df.groupBy("classNo", "gender").avg("score").show()
 //    println("result is: "+score.toArray)
 //    val arr = df.describe("classNo").collect()
 //    for (i<-score) {print(i+" ")}
